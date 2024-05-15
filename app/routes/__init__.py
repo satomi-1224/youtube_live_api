@@ -1,12 +1,12 @@
-from .item_routes import router as item_router
-from .user_routes import router as user_router
+from .creator_routes import router as creator_router
+from .live_routes import router as live_router
 
 from fastapi import APIRouter
 
-router = APIRouter(prefix='/api')
+router = APIRouter()
 
 # Add routes to application
-router.include_router(user_router, prefix='/users')
-router.include_router(item_router, prefix='/items')
+router.include_router(live_router, prefix='/live')
+router.include_router(creator_router, prefix='/creator')
 
 __all__ = ['router']
