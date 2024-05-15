@@ -40,4 +40,4 @@ async def log_info_middleware(request: Request, call_next: Callable[[Request], A
 
 # サーバーを起動するためのコード
 if __name__ == '__main__':
-    uvicorn.run(app, host=address, port=port)
+    uvicorn.run('main:app', host=address, port=port, reload=True)
