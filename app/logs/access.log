@@ -1,0 +1,4 @@
+2024-05-15 14:05:42,431 - access_logger - INFO - IP: 172.20.0.1 - Method: GET - URL: /docs
+2024-05-15 14:05:42,431 - access_logger - INFO - Response status: 200 - Method: GET - URL: /docs
+2024-05-15 14:05:42,647 - access_logger - INFO - IP: 172.20.0.1 - Method: GET - URL: /openapi.json
+2024-05-15 14:05:42,649 - access_logger - INFO - Response status: 200 - Method: GET - URL: /openapi.json

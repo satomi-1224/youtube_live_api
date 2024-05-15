@@ -1,0 +1,2 @@
+2024-05-15 14:05:42,432 - info_logger - INFO - Request completed - Method: GET - URL: /docs
+2024-05-15 14:05:42,649 - info_logger - INFO - Request completed - Method: GET - URL: /openapi.json

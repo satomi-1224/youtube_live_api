@@ -1,8 +1,18 @@
-from dotenv import load_dotenv
-import os
+from pydantic_settings import BaseSettings
 
-load_dotenv()
+class Settings(BaseSettings):
+    address: str
+    port: int
 
-# 環境変数を使用する
-address=os.getenv('ADDRESS', '127.0.0.1')
-port=os.getenv('PORT', '8000')
+    class Config:
+        env_file = '.env'
+        env_file_encoding = 'utf-8'
+        
+# 設定をインスタンス化して使用
+settings = Settings()
+
+# .env内
+address = settings.address
+port = settings.port
+
+__all__ = ['address', 'port']
