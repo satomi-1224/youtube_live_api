@@ -1,1 +1,24 @@
 # ディレクトリ構成
+- app(APIのアプリケーションルート)
+    - .venv(仮想環境郡)
+    - config(サーバのコンフィグ類を管理、.envを一度ラップする)
+    - logs(ログ出力)
+    - middlewares(ミドルウェアの管理)
+    - routes(routeの管理)
+    - schemas(型定義)
+    - services(ビジネスロジック)
+    - utils(汎用処理系の格納)
+    - __init__.py
+    - .env
+    - main.py
+    - poetry.lock
+    - pyproject.toml
+- docker(Dockerfileやコンテナのファイルなど)
+    - python
+        - Dockerfile
+- docs(READMEの拡張、ドキュメント格納)
+    - a.md
+    - b.md
+- .gitignore
+- docker-compose-yml
+- README.md(基本はdocs内のmdに書き、そのリンクをまとめる)
