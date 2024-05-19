@@ -3,6 +3,8 @@ services:
     build: ./docker/python
     volumes:
       - ./app:/root/app
+      - ../youtube_live_info/data:/root/app/data
+      - ../youtube_live_info/creators:/root/app/creators
     ports:
       - "80:8000"
     tty: true
