@@ -14,7 +14,7 @@ import aiofiles.os
 router = APIRouter()
 service = CreatorService()
 
-@router.get('/items', response_model = List[ItemsResponse])
+@router.get('/items', response_model=List[ItemsResponse])
 async def get_items(request: ItemsRequest = Depends(ItemsRequest)) -> List[ItemsResponse]:
     creator_dir = f'{base_dir}/creators'
     files = await aiofiles.os.listdir(creator_dir)
@@ -25,7 +25,7 @@ async def get_items(request: ItemsRequest = Depends(ItemsRequest)) -> List[Items
     
     return filter_creators
 
-@router.get('/item', response_model = Optional[ItemsResponse])
+@router.get('/item', response_model=Optional[ItemsResponse])
 async def get_item(request: ItemRequest = Depends(ItemRequest)) -> Optional[ItemsResponse]:
     creator_dir = f'{base_dir}/creators'
     files = await aiofiles.os.listdir(creator_dir)
