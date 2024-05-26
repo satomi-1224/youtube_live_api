@@ -1,5 +1,4 @@
-from typing import List
-from typing import Optional
+from typing import List, Optional
 from schemas.creator.responses.items_response import ItemsResponse
 from schemas.creator.requests.items_request import ItemsRequest
 from schemas.creator.requests.item_request import ItemRequest
@@ -13,7 +12,8 @@ class ItemsFilter():
             
         return creators
     
-    def filterBychannelId(request: ItemRequest, creators: List[ItemsResponse]) -> Optional[ItemsResponse]:
+    @staticmethod
+    def filterByChannelId(request: ItemRequest, creators: List[ItemsResponse]) -> Optional[ItemsResponse]:
         if request.channelId != None:
             for creator in creators:
                 if creator['channelId'] == request.channelId:
