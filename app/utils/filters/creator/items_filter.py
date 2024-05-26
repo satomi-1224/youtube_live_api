@@ -14,9 +14,4 @@ class ItemsFilter():
     
     @staticmethod
     def filterByChannelId(request: ItemRequest, creators: List[ItemsResponse]) -> Optional[ItemsResponse]:
-        if request.channelId != None:
-            for creator in creators:
-                if creator['channelId'] == request.channelId:
-                    return creator
-                            
-        return None
+        return next((creator for creator in creators if creator['channelId'] == request.channelId), None)
