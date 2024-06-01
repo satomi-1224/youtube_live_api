@@ -1,1 +1,0 @@
-class ItemSchema: pass
