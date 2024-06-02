@@ -10,7 +10,7 @@ class _Creator(BaseModel):
       channelIcon: str
       tag: List[str]
 
-class Item(BaseModel):
+class _Item(BaseModel):
     creator: _Creator
     id: str
     title: str
@@ -27,5 +27,5 @@ class Item(BaseModel):
     videoId: str
     seconds: float
     
-class ItemsResponse(RootModel[List[Item]]):
+class ItemsResponse(RootModel[List[_Item]]):
     pass
