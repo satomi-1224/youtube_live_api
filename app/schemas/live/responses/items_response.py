@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, RootModel
 from typing import Optional, List
 from datetime import datetime
 
@@ -10,7 +10,7 @@ class _Creator(BaseModel):
       channelIcon: str
       tag: List[str]
 
-class ItemsResponse(BaseModel):
+class Item(BaseModel):
     creator: _Creator
     id: str
     title: str
@@ -26,3 +26,6 @@ class ItemsResponse(BaseModel):
     category: Optional[str]
     videoId: str
     seconds: float
+    
+class ItemsResponse(RootModel[List[Item]]):
+    pass

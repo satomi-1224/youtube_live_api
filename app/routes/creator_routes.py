@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from typing import List, Optional
+from typing import Optional
 from config.app import base_dir
 from services.creator.creator_service import CreatorService
 
@@ -17,8 +17,8 @@ creator_dir = f'{base_dir}/creators'
 router = APIRouter()
 service = CreatorService()
 
-@router.get('/items', response_model=List[ItemsResponse])
-async def get_items(request: ItemsRequest = Depends(ItemsRequest)) -> List[ItemsResponse]:
+@router.get('/items', response_model=ItemsResponse)
+async def get_items(request: ItemsRequest = Depends(ItemsRequest)) -> ItemsResponse:
     files = await aiofiles.os.listdir(creator_dir)
     file_paths = [f'{creator_dir}/{fp}' for fp in files]
     
