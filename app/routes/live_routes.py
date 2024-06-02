@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-from typing import List, Optional
+from typing import Optional
 from config.app import base_dir
 from services.live.live_service import LiveService
 
@@ -18,8 +18,8 @@ live_dir = f'{base_dir}/data'
 router = APIRouter()
 service = LiveService()
 
-@router.get('/items', response_model=List[ItemsResponse])
-async def get_items(request: ItemsRequest = Depends(ItemsRequest)) -> List[ItemsResponse]:
+@router.get('/items', response_model=ItemsResponse)
+async def get_items(request: ItemsRequest = Depends(ItemsRequest)) -> ItemsResponse:
     files = await aiofiles.os.listdir(live_dir)
     file_paths = [f'{live_dir}/{fp}' for fp in files]
     
