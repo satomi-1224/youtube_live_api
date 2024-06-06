@@ -11,6 +11,7 @@ fastapi = "^0.111.0"
 pydantic-settings = "^2.2.1"
 logging = "^0.4.9.6"
 aiofiles = "^23.2.1"
+python-dateutil = "^2.9.0.post0"
 
 
 [build-system]
